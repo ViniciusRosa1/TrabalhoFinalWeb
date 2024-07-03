@@ -1,7 +1,9 @@
 import uuid
 from django.test import TestCase
 from model_mommy import mommy
-from core.models import get_file_path
+from django.contrib.auth.models import User
+from TF_web.core.models import get_file_path, Servico, Cargo, Funcionario, Paciente, FichaAvaliacao, Boleto, FichaTreino, Agendamento
+
 
 class GetFilePathTestCase(TestCase):
     def setUp(self):
