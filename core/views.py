@@ -3,11 +3,10 @@ from django.shortcuts import render
 # Create your views here.
 from django.views.generic import TemplateView
 from .models import Servico, Funcionario, Paciente, FichaAvaliacao, Boleto, FichaTreino, Agendamento, Plano
-from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import LoginUserForm
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 

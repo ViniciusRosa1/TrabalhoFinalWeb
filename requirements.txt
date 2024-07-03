@@ -28,6 +28,7 @@ click==8.1.7
 coloredlogs==15.0.1
 comm==0.2.2
 contourpy==1.2.1
+coverage==7.5.4
 cryptography==42.0.7
 cssselect2==0.7.0
 cycler==0.12.1
@@ -170,6 +171,7 @@ pyproject_hooks==1.1.0
 PyRect==0.2.0
 PyScreeze==0.1.30
 pytest==8.2.2
+pytest-cov==5.0.0
 pytest-django==4.8.0
 python-bidi==0.4.2
 python-dateutil==2.9.0.post0

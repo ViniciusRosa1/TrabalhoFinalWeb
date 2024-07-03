@@ -1,0 +1,6 @@
+env/
+db.sqlite3
+.DS_SOTRE
+.vscode/
+htmlcov/
+.pytest_cache
