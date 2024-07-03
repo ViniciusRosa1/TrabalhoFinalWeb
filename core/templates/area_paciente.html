@@ -1,0 +1,72 @@
+<!-- area_paciente.html -->
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5 pt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="mb-">Perfil do Paciente:</h1>
+            <h4 class="mb-4"> - {{ paciente.nome }}</h4>
+        </div>
+        <div class="col-md-6">
+            <h2>Informações Pessoais</h2>
+            <p><strong>Email:</strong> {{ paciente.email }}</p>
+            <p><strong>Telefone:</strong> {{ paciente.telefone }}</p>
+        </div>
+        <div class="col-md-6">
+            <h2>Planos e Serviços</h2>
+            <p><strong>Plano:</strong> {{ paciente.plano.nome }} Aula(s) Semanal</p>
+            <!--<p><strong>Valor do plano:</strong> {{ plano.valor }}</p>-->
+            <p><strong>Serviço:</strong> {{ paciente.servico.servico }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Fichas de Avaliação</h2>
+            <ul class="list-group mb-4">
+                {% for ficha in fichas_avaliacao %}
+                <li class="list-group-item">
+                    <strong>Altura:</strong> {{ ficha.altura }}Cm - <strong>IMC:</strong> {{ ficha.imc }} - <strong>Peso:</strong> {{ ficha.peso }}Kg - <strong>Gordura Corporal:</strong> {{ ficha.gordura }}Kg<br>
+                    <strong>Observações:</strong> {{ ficha.observacoes }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-12">
+            <h2>Boletos</h2>
+            <ul class="list-group mb-4">
+                {% for boleto in boletos %}
+                <li class="list-group-item">
+                    <strong>Data de Vencimento:</strong> {{ boleto.data_vencimento }} - <strong>Valor: </strong> R${{ boleto.valor }} - <strong>Pago:</strong> {{ boleto.pago|yesno:"Pago,Em aberto" }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-12">
+            <h2>Fichas de Treino</h2>
+            <ul class="list-group mb-4">
+                {% for ficha in fichas_treino %}
+                <li class="list-group-item">
+                    <strong>Exercício:</strong> {{ ficha.exercicio }}<br>
+                    <strong>Séries:</strong> {{ ficha.series }} - <strong>Repetições:</strong> {{ ficha.repeticoes }} - <strong>Carga:</strong> {{ ficha.carga }}<br>
+                    <strong>Observações:</strong> {{ ficha.observacoes }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-12">
+            <h2>Agendamentos</h2>
+            <ul class="list-group mb-4">
+                {% for agendamento in agendamentos %}
+                <li class="list-group-item">
+                    <strong>Data:</strong> {{ agendamento.data }} - <strong>Hora:</strong> {{ agendamento.hora }}h - <strong>Status:</strong> {{ agendamento.status }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

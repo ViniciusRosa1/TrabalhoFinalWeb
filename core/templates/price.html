@@ -1,0 +1,31 @@
+{% load static %}
+
+<section id="pricing" class="section-padding">
+   <div class="container">
+     <div class="section-header text-center">          
+       <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Preços</h2>
+       <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+     </div>
+     <div class="row">
+      {% for plan in planos  %}
+       <div class="col-lg-4 col-md-6 col-xs-12">
+         <div class="table wow fadeInLeft" data-wow-delay="1.2s">
+           <div class="icon-box">
+             <i class="lni-box"></i>
+           </div>
+           <div class="pricing-header">
+             <p class="price-value">R${{plan.preco}}<span> /mês</span></p>
+           </div>
+           <div class="title">
+             <h3>Pilates</h3>
+           </div>
+           <ul class="description">
+             <li>{{plan.nome}} Aula(s) Semanais</li>
+           </ul>
+           <button class="btn btn-common">Reservar horário</button>
+         </div> 
+       </div>
+      {% endfor %}
+     </div>
+   </div>
+ </section>
