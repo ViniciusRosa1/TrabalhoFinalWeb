@@ -43,11 +43,12 @@ class logIn(generic.View):
                     messages.success(request, f"VocÊ está logado como {username}")
                     return redirect('area_paciente')
                 else:
-                    messages.error(request, "ERRO")
+                    messages.error(request, "Usuário ou senha inválidos")
             else:
                 messages.error(request, 'Usuário ou senha inválidos')
-        form = LoginUserForm()
-        return render(request, "templates/login.html", {'form': form})
+        else:        
+            form = LoginUserForm()
+        return render(request, "login.html", {'form': form})
                     
 class AreaPacienteView(LoginRequiredMixin, TemplateView):
     template_name = 'area_paciente.html'

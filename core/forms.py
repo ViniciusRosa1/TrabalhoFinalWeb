@@ -3,7 +3,6 @@ from typing import Any
 from django import forms
 from django.core.exceptions import ValidationError
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.models import User
 from .models import Agendamento
 
 class AgendamentoForm(forms.ModelForm):
